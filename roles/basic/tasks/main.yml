@@ -1,0 +1,26 @@
+# without update I couldn't install git!
+- name: "Updating packages"
+  apt: update_cache=yes
+
+- name: "Installing additional software"
+  apt: pkg={{ item }} state=installed
+  with_items: 
+  - dnsutils
+  - git
+  - vim
+  - ntp
+  - at 
+  - lvm2
+
+- name: "Adding bashrc"
+  copy: src=../files/bash.bashrc dest=/etc/bash.bashrc owner=root group=root mode=0664
+
+- name: "Removing Ben's bashrc"
+  shell: "mv /home/vagrant/.bashrc /home/vagrant/.bashrc_backup"
+  args:
+    creates: "/homes/vagrant/.bashrc_backup"
+
+- name: "root's bashrc"
+  shell: "mv /root/.bashrc /root/.bashrc_backup"
+  args:
+    creates: "/root/.bashrc_backup"
