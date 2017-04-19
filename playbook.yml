@@ -3,3 +3,8 @@
   become: true
   roles:
    - basic
+
+- hosts: webserver
+  become: true
+  roles:
+    - webserver
