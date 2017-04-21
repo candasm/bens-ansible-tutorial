@@ -13,3 +13,8 @@
   become: true
   roles:
     - appserver
+
+- hosts: dbserver
+  become: true
+  roles:
+  - dbserver
