@@ -1,5 +1,5 @@
 - name: "Installing webserver software"
-  apt: name={{ item }}
+  apt: pkg={{ item }} state=installed
   with_items:
   - apache2
 
