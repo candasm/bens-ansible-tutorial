@@ -5,4 +5,4 @@ Install
 - add webserver, appserver, dbserver in ~/.ssh/config file 
 - install ansible via brew cask install ansible
 
-tutorial : [https://github.com/candasm/bens-ansible-tutorial](https://github.com/candasm/bens-ansible-tutorial)
+tutorial : https://github.com/candasm/bens-ansible-tutorial
